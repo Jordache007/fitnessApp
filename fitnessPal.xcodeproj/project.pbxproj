@@ -14,6 +14,7 @@
 		881524AD29C2117C001382AB /* fitnessPalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881524AC29C2117C001382AB /* fitnessPalTests.swift */; };
 		881524B729C2117C001382AB /* fitnessPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881524B629C2117C001382AB /* fitnessPalUITests.swift */; };
 		881524B929C2117C001382AB /* fitnessPalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881524B829C2117C001382AB /* fitnessPalUITestsLaunchTests.swift */; };
+		8842475729C34C9F00DCFCE6 /* WorkoutDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842475629C34C9F00DCFCE6 /* WorkoutDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		881524B229C2117C001382AB /* fitnessPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fitnessPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		881524B629C2117C001382AB /* fitnessPalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fitnessPalUITests.swift; sourceTree = "<group>"; };
 		881524B829C2117C001382AB /* fitnessPalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fitnessPalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8842475629C34C9F00DCFCE6 /* WorkoutDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				8815249D29C21179001382AB /* ContentView.swift */,
 				8815249F29C2117B001382AB /* Assets.xcassets */,
 				881524A129C2117B001382AB /* Preview Content */,
+				8842475629C34C9F00DCFCE6 /* WorkoutDetails.swift */,
 			);
 			path = fitnessPal;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				8815249E29C21179001382AB /* ContentView.swift in Sources */,
 				8815249C29C21179001382AB /* fitnessPalApp.swift in Sources */,
+				8842475729C34C9F00DCFCE6 /* WorkoutDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fitnessPal/Preview Content\"";
+				DEVELOPMENT_TEAM = 3MSN9N892S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,6 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fitnessPal/Preview Content\"";
+				DEVELOPMENT_TEAM = 3MSN9N892S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

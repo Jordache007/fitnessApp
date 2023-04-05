@@ -20,6 +20,7 @@ struct TrackerView: View {
 }
 
 struct TrackerView_Previews: PreviewProvider {
+    // array data
     static var previews: some View {
         TrackerView(data: [10, 23, 30, 35, 40, 45, 50])
     }

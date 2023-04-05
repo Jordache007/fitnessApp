@@ -8,97 +8,120 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    @State private var selectedTab = 0
     let workouts = workoutsData
+    
+    @StateObject var settingsStore = SettingsStore()
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                ZStack {
-                    Image("fitnessBack")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 300)
-                    VStack {
-                        Spacer()
-                        Text("Full Body workout")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                        Text("For Jordache")
-                            .fontWeight(.regular)
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    .frame(width: 380)
-//                    .background(opacity(20))
-                    //.background(Color(.black))
-               
-                }
-                .frame(width: 380, height: 300)
-                .cornerRadius(20)
-                .clipped()
-                .shadow(radius: 8)
-//                .padding(.bottom, 20)
-                .padding()
-            .navigationTitle("Fitness Workouts")
-                
-                Text("Weekly Plan")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .padding()
-                
-                ScrollView(.horizontal, showsIndicators: false ) {
-                    HStack(spacing: 30) {
-                        
-                        ForEach(workouts) { workout in
-                            
-                            
-                            NavigationLink(destination: WorkoutDetails(workout: workout)) {
-                                ZStack {
-                                    
-                                    Image(workout.image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(height: 200)
-                                        .opacity(0.7)
-                                    
-                                    VStack {
-                                        Spacer()
-                                        Text(workout.day)
-                                            .font(.title)
-                                            .foregroundColor(.white)
-                                            .fontWeight(.semibold)
-                                            
-                                        Text(workout.bodyPart)
-                                            .fontWeight(.regular)
-                                            .foregroundColor(.white)
-                                    }
-                                    .padding()
-                                    .frame(width: 250)
-                                    .opacity(10)
-                                }
-                                
-                                
-                                .frame(width: 200, height: 200)
-                                .clipped()
-                                .cornerRadius(20)
-                            .shadow(radius: 8)
-                            }
+            TabView(selection: $selectedTab) {
+                VStack(alignment: .leading) {
+                    ZStack {
+                        Image("fitnessBack")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 300)
+                        VStack {
+                            Spacer()
+                            Text("Full Body workout")
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                                .fontWeight(.semibold)
+                            Text("For Jordache")
+                                .fontWeight(.regular)
+                                .foregroundColor(.white)
                         }
-                        
-                        
+   
+                    }
+                    .frame(width: 380, height: 300)
+                    .cornerRadius(20)
+                    .clipped()
+                    .shadow(radius: 8)
+    //                .padding(.bottom, 20)
+                    .padding()
+                .navigationTitle("Fitness Workouts")
+                    
+                    Text("Weekly Plan")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .padding()
+                    
+                    ScrollView(.horizontal, showsIndicators: false ) {
+                        HStack(spacing: 30) {
+                            
+                            ForEach(workouts) { workout in
+                                
+                                
+                                NavigationLink(destination: WorkoutDetails(workout: workout)) {
+                                    ZStack {
+                                        
+                                        Image(workout.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(height: 200)
+                                            .opacity(0.7)
+                                        
+                                        VStack {
+                                            Spacer()
+                                            Text(workout.day)
+                                                .font(.title)
+                                                .foregroundColor(.white)
+                                                .fontWeight(.semibold)
+                                                
+                                            Text(workout.bodyPart)
+                                                .fontWeight(.regular)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .frame(width: 250)
+                                        .opacity(10)
+                                    }
+                                    
+                                    
+                                    .frame(width: 200, height: 200)
+                                    .clipped()
+                                    .cornerRadius(20)
+                                .shadow(radius: 8)
+                                }
+                            }
+                            
+                            
+                            
+                        }
+                        .padding()
                         
                     }
-                    .padding()
+                    
+                    .offset(x:0, y: -20)
+                    Spacer()
+                    
                     
                 }
-                .offset(x:0, y: -20)
-                Spacer()
-                
-            }
-            
-        }
-    }
-}
+                .tabItem {
+                                   Label("Workouts", systemImage: "list.bullet")
+                               }
+                               
+                NavigationView {
+                    TrackerView(data: [10, 20, 30, 40, 50])
+                }
+                                   .tabItem {
+                                       Label("Tracking", systemImage: "chart.bar")
+                                   }
+                               
+                               NavigationView {
+                                   SettingsView()
+                               }
+                               .tabItem {
+                                   Label("Settings", systemImage: "gearshape")
+                               }
+                           }
+                           .environmentObject(settingsStore)
+                       }
+                   }
+               }
+
 
 
 struct ContentView_Previews: PreviewProvider {

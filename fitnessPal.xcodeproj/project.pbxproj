@@ -15,6 +15,10 @@
 		881524B729C2117C001382AB /* fitnessPalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881524B629C2117C001382AB /* fitnessPalUITests.swift */; };
 		881524B929C2117C001382AB /* fitnessPalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881524B829C2117C001382AB /* fitnessPalUITestsLaunchTests.swift */; };
 		8842475729C34C9F00DCFCE6 /* WorkoutDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842475629C34C9F00DCFCE6 /* WorkoutDetails.swift */; };
+		8842475929C3832E00DCFCE6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842475829C3832E00DCFCE6 /* SettingsView.swift */; };
+		8842475B29C384F500DCFCE6 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8842475A29C384F500DCFCE6 /* SettingsStore.swift */; };
+		889381F229C3A72400E598D2 /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889381F129C3A72400E598D2 /* TrackerView.swift */; };
+		889381F529C3ABB000E598D2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 889381F429C3ABB000E598D2 /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,9 @@
 		881524B629C2117C001382AB /* fitnessPalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fitnessPalUITests.swift; sourceTree = "<group>"; };
 		881524B829C2117C001382AB /* fitnessPalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fitnessPalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8842475629C34C9F00DCFCE6 /* WorkoutDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetails.swift; sourceTree = "<group>"; };
+		8842475829C3832E00DCFCE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8842475A29C384F500DCFCE6 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		889381F129C3A72400E598D2 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889381F529C3ABB000E598D2 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +109,9 @@
 				8815249F29C2117B001382AB /* Assets.xcassets */,
 				881524A129C2117B001382AB /* Preview Content */,
 				8842475629C34C9F00DCFCE6 /* WorkoutDetails.swift */,
+				8842475829C3832E00DCFCE6 /* SettingsView.swift */,
+				8842475A29C384F500DCFCE6 /* SettingsStore.swift */,
+				889381F129C3A72400E598D2 /* TrackerView.swift */,
 			);
 			path = fitnessPal;
 			sourceTree = "<group>";
@@ -146,6 +157,9 @@
 			dependencies = (
 			);
 			name = fitnessPal;
+			packageProductDependencies = (
+				889381F429C3ABB000E598D2 /* SwiftUICharts */,
+			);
 			productName = fitnessPal;
 			productReference = 8815249829C21179001382AB /* fitnessPal.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 8815248F29C21179001382AB;
+			packageReferences = (
+				889381F329C3ABB000E598D2 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 8815249929C21179001382AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,8 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8815249E29C21179001382AB /* ContentView.swift in Sources */,
+				8842475929C3832E00DCFCE6 /* SettingsView.swift in Sources */,
 				8815249C29C21179001382AB /* fitnessPalApp.swift in Sources */,
+				8842475B29C384F500DCFCE6 /* SettingsStore.swift in Sources */,
 				8842475729C34C9F00DCFCE6 /* WorkoutDetails.swift in Sources */,
+				889381F229C3A72400E598D2 /* TrackerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +603,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		889381F329C3ABB000E598D2 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		889381F429C3ABB000E598D2 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 889381F329C3ABB000E598D2 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8815249029C21179001382AB /* Project object */;
 }
